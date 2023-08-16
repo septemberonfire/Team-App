@@ -1,0 +1,12 @@
+.btn {
+  padding: 10px 74px;
+  background-color: $softBlue;
+  border-radius: 4px;
+  font: $btn;
+  color: $offWhite;
+  height: fit-content;
+
+  &-blueLight {
+    background-color: $softBlue-light;
+  }
+}

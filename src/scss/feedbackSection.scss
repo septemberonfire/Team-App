@@ -1,0 +1,51 @@
+.feedback {
+  padding-left: 40px;
+  &_title {
+    font: $heading1-m;
+    color: $darkBlue;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  &_card {
+    background-color: #fff;
+    padding: 44px 33px;
+    box-shadow: 0 16px 24px rgba(118, 118, 178, 0.0576);
+    max-width: 367px;
+    min-width: 260px;
+    margin-bottom: 164px;
+    height: fit-content;
+    &Rate {
+      padding-bottom: 24px;
+    }
+    &Text {
+      padding-bottom: 40px;
+    }
+  }
+  &_cardsWrap {
+      display: flex;
+      gap: 16px;
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+  }
+  &_user {
+    &Avatar {
+      // object-fit: none;
+      margin-right: 14px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+    }
+    &Card {
+      display: flex;
+      
+    }
+    &Name {
+      font: $heading3;
+      color: $darkBlue;
+    }
+    &Job {
+      font: $caption;
+      color: $desaturatedBlue;
+    }
+  }
+}

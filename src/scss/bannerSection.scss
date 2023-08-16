@@ -1,0 +1,165 @@
+.banner {
+  background: url(../images/christina-wocintech_header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 85%;
+  padding: 0 30px;
+
+  &_content {
+    padding-bottom: 88px;
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $desaturatedBlue;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $desaturatedBlue;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $desaturatedBlue;
+}
+
+  &_input {
+    padding: 12px 16px;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 14px;
+    flex-grow: 1;
+
+    &Wrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: $offWhite;
+      border: 2px solid $grayishBlue;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &_arrow {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+
+  &_title {
+    font: $heading1-m;
+    color: $offWhite;
+  }
+
+  &_subtitle {
+    font: $p-m;
+    color: $offWhite;
+    margin-bottom: 56px;
+  }
+
+  &_btn {
+    width: 100%;
+  }
+
+  .header {
+    padding-top: 30px;
+    padding-bottom: 188px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_menu {
+      display: none;
+      &List {
+        display: flex;
+        align-items: center;
+        &Item {
+          text-decoration: underline;
+          font: $p-m;
+          color: $offWhite;
+          margin-right: 16px;
+          
+        }
+      }
+    }
+  }
+
+  .burger_menu {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+
+  @media screen and (min-width: 568px) {
+    &_title {
+      font: $heading1;
+    }
+
+    &_subtitle {
+      font: $p;
+    }
+
+    &_form {
+      flex-direction: row;
+    }
+
+    &_inputWrap {
+      width: 60%;
+      margin-bottom: 0px;
+      margin-right: 12px;
+    }
+
+    &_btn {
+      width: 40%;
+    }
+
+    &_content {
+      padding-bottom: 112px;
+    }
+  }
+
+  @media screen and (min-width: 744px) {
+    .burger_menu {
+      display: none;
+    }
+
+    &_inputWrap {
+      margin-right: 16px;
+    }
+
+    &_content {
+      max-width: 548px;
+      padding-bottom: 140px;
+    }
+
+    &_btn {
+      width: 234px;
+    }
+
+    &_inputWrap {
+      width: 298px;
+    }
+
+    .header {
+      &_menu {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+    
+  .banner {
+    padding: 0 140px;
+    &_content {
+      max-width: 564px;
+      padding-bottom: 248px;
+    }
+  }
+}
