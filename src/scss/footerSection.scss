@@ -1,16 +1,22 @@
 .footer {
   background-color: $darkBlue;
   padding: 48px 24px;
+  
   &_logo {
     padding-bottom: 16px;
     &Wrap {
       width: 168px;
       margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      
     }
   }
-  &_wrap {
+  &_wrapper {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
   &_caption {
     font: $caption;
@@ -70,6 +76,9 @@
     margin-bottom: 48px;
     width: fit-content;
     max-width: 138px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     }
     &Wrap {
       display: flex;
@@ -85,8 +94,8 @@
 
 @media screen and (min-width: 568px) {
   .footer {
-    &_wrap {
-      flex-direction: column-reverse;
+    &_wrapper {
+      
     }
     &_content {
       &Wrap {
@@ -111,8 +120,13 @@
 
 @media screen and (min-width: 1440px) {
   .footer {
-    &_wrap {
-      flex-direction: row;
+    padding: 72px 140px;
+    display: flex;
+    
+    &_wrapper {
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      
 }
 }
 }

@@ -10,7 +10,6 @@
     background-color: #fff;
     padding: 44px 33px;
     box-shadow: 0 16px 24px rgba(118, 118, 178, 0.0576);
-    max-width: 367px;
     min-width: 260px;
     margin-bottom: 164px;
     height: fit-content;
@@ -47,5 +46,11 @@
       font: $caption;
       color: $desaturatedBlue;
     }
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .feedback_card {
+    width: 368px;
   }
 }
