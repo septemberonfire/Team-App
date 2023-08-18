@@ -148,18 +148,25 @@
     .header {
       &_menu {
         display: flex;
+        &ListItem {
+          margin-right: 16px;
+        }
       }
     }
   }
 }
 
 @media screen and (min-width: 1440px) {
-    
+  
+  
   .banner {
     padding: 0 140px;
     &_content {
       max-width: 564px;
       padding-bottom: 248px;
+    }
+    .header_menuListItem {
+      margin-right: 56px;
     }
   }
 }

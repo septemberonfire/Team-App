@@ -1,3 +1,6 @@
 import drawCards from "./scripts/drawFeedbackCards";
 
-drawCards()
+import slider from "./scripts/slider";
+
+await drawCards();
+slider();

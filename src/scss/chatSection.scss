@@ -1,25 +1,30 @@
 .chat {
   
-  &_heading {
+  &_title {
     font: $heading1-m;
     color: $darkBlue;
     margin-bottom: 24px;
-    padding: 0 30px;
+    padding: 0 24px;
+    
   }
-  &_par {
+  &_subtitle {
     font: $p-m;
     color: $darkBlue;
     margin-bottom: 48px;
     padding: 0 30px;
+    
   }
   &_link {
     font: $p-m;
     color: $softBlue;
     text-decoration: underline;
     padding-left: 30px;
+    
+    
     &Wrap {
       display: flex;
     }
+
 
   }
   &_block {
@@ -29,8 +34,8 @@
     &:last-child {
       padding-bottom: 120px;
     }
-    &-1 {
-    padding-top: 100px;
+    &-main {
+    margin: 80px 0 120px 30px;
     padding-bottom: 64px;
     display: flex;
     flex-direction: column;
@@ -42,7 +47,7 @@
   }
   &_img{
     padding-bottom: 48px;
-    &-1 {
+    &-main {
       padding-bottom: 48px;
       object-fit: none;
       object-position: left;
@@ -52,9 +57,21 @@
   }
 }
 
-.block-3 {
+.block-reversed {
   display: flex;
   flex-direction: column;
+}
+
+.title-main {
+  padding: 0;
+}
+
+.subtitle-main {
+  padding: 0;
+}
+
+.linkWrap-main {
+  padding: 0;
 }
 
 @media screen and (min-width: 568px) {
@@ -73,21 +90,24 @@
       
     }
   }
-  .block-3 {
+  .block-reversed {
     flex-direction: row-reverse;
   }
 }
 
 @media screen and (min-width: 744px) {
   .chat {
-    &_heading {
+    &_title {
       font: $heading1;
     }
-    &_par {
+    &_subtitle {
       font: $p;
     }
     &_img {
       padding-bottom: 0;
+    }
+    &blockContent-main {
+      width: 100%;
     }
   }
 }
@@ -95,13 +115,50 @@
 @media screen and (min-width: 1440px) {
   
   .chat {
-    padding: 0 140px;
-    &_block-1 {
-      flex-direction: row-reverse;
+    &_img-main {
+      padding: 0;
     }
-    &_block:last-child {
-      padding-bottom: 200px;
+    &_block {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0 140px 120px;
+      &:last-child {
+        margin-bottom: 200px;
+        padding: 0;
+      }
+      &Content {
+        width: 456px;
+        &-main {
+          align-self: center;
+        }
+      }
+      &-main {
+        margin: 80px 0 120px 140px;
+        padding: 0;
+      }
+    }
+    &_title {
+      margin-bottom: 24px;
+      padding: 0;
+    }
+    &_subtitle {
+      margin-bottom: 48px;
+      padding: 0;
+    }
+    &_link {
+      font: $p-m;
+      color: $softBlue;
+      text-decoration: underline;
+      padding-left: 0px;
+    }
+    &_block-main {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
     
-  }
+    
+  
+
 }
 }
