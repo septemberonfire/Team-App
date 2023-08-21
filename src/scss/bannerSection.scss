@@ -72,27 +72,69 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &.open {
+    & .header_burgerMenu div {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        visibility: hidden;
+      }
+      &:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+    & .header_menu {
+      opacity: 1;
+    }
+  }
+    &_burgerMenu {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      padding: 6px 3px;
+      z-index: 2;
+      
+      
+      & div {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: $offWhite;
+        border-radius: 1px;
+        margin-bottom: 3px;
+        transition: transform 0.5s;
+      }
+    }
 
     &_menu {
-      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      background-color: $softBlue;
+      padding: 92px 32px 12px 64px;
+      transition: opacity .5s ease-in-out;
+      
+      
       &List {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        flex-direction: column;
         &Item {
           text-decoration: underline;
           font: $p-m;
           color: $offWhite;
-          margin-right: 16px;
+          margin-bottom: 24px;
           
         }
       }
     }
   }
 
-  .burger_menu {
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
+  .btn-blueLight {
+    display: none;
   }
 
   @media screen and (min-width: 568px) {
@@ -124,9 +166,7 @@
   }
 
   @media screen and (min-width: 744px) {
-    .burger_menu {
-      display: none;
-    }
+    
 
     &_inputWrap {
       margin-right: 16px;
@@ -146,12 +186,33 @@
     }
 
     .header {
+      &_burgerMenu {
+        display: none;
+      }
       &_menu {
+        position: relative;
+        right: 0;
         display: flex;
-        &ListItem {
-          margin-right: 16px;
+        flex-direction: row;
+        background-color: transparent;
+        padding: 0;
+        opacity: 1;
+        align-items: center;
+        &List {
+          flex-direction: row;
+          &Item {
+            margin-bottom: 0;
+            margin-right: 16px;
+            &:last-child {
+              display: none;
+            }
+          }
         }
       }
+    }
+
+    .btn-blueLight {
+      display: block;
     }
   }
 }
