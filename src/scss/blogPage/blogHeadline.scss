@@ -1,0 +1,28 @@
+.headline {
+  padding: 0 30px 48px;
+  display: flex;
+  flex-direction: column;
+  &_title {
+    font: $heading1;
+    color: $darkBlue;
+    margin-bottom: 12px;
+  }
+  &_subtitle {
+    font: $caption;
+    color: $darkBlue;
+  }
+}
+
+@media screen and (min-width: 744px) {
+
+  .headline {
+    padding-bottom: 64px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+  .headline {
+    padding: 0 140px 80px;
+  }
+}

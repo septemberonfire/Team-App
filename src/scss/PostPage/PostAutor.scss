@@ -1,0 +1,35 @@
+.autor {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 30px 80px;
+  &_avatar {
+    margin-right: 24px;
+  }
+  &_writtenBy {
+    font: $heading4;
+    color: $softViolet;
+    margin-bottom: 12px;
+  }
+  &_name {
+    font: $heading3;
+    color: $darkBlue;
+    margin-bottom: 12px;
+  }
+  &_job {
+    font: $caption;
+    color: $desaturatedBlue;
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .autor {
+    margin: 0 60px 96px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .autor {
+    margin: 0 338px 120px;
+  }
+}

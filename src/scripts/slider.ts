@@ -11,7 +11,6 @@ function addListenersForMovingFeedback({
   isPrevArrow: boolean;
   count: { value: number };
 }) {
-  
   const prevArrow = document.querySelector("#prev-arrow");
   const nextArrow = document.querySelector("#next-arrow");
   const cardWrap = document.querySelector("#cardsWrap") as HTMLElement;
@@ -47,11 +46,12 @@ function addListenersForMovingFeedback({
   }
 
   if (currentElem) {
-    
     currentElem.addEventListener("mousedown", cardMover);
     currentElem.addEventListener("touchstart", cardMover);
     currentElem.addEventListener("mouseup", () => clearInterval(changePos));
     currentElem.addEventListener("touchend", () => clearInterval(changePos));
     currentElem.addEventListener("mouseleave", () => clearInterval(changePos));
   }
+
+
 }

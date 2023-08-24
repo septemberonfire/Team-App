@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Lexend+Deca:wght@400;700&display=swap");
+@import "../commonStyles/normalize.scss";
+@import "../commonStyles/variables.scss";
+@import "./bannerSection.scss";
+@import "./chatSection.scss";
+@import "./feedbackSection.scss";
+@import "../UI/btn.scss";
+@import "../UI/footerSection.scss";
+@import "../UI/loader.scss";
+
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  min-width: 320px;
+  background-color: $offWhite;
+  &_wrap {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 32px;
+}

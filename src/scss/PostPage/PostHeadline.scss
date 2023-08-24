@@ -1,0 +1,39 @@
+.headline {
+  margin: 0 30px 56px;
+  &_title {
+    font: $heading1-m;
+    color: $darkBlue;
+    margin-bottom: 56px;
+  }
+  &_autor {
+    display: flex;
+    align-items: center;
+    &Avatar {
+      scale: 0.75;
+    }
+    &Name {
+      font: $caption-m;
+      color: $desaturatedBlue;
+      margin-right: 16px;
+    }
+    &Date {
+      font: $caption-m;
+      color: $desaturatedBlue;
+    }
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .headline {
+    
+    &_title {
+      font: $heading1;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .headline {
+    margin: 0 338px 56px;
+  }
+}

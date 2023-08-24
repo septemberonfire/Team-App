@@ -1,0 +1,38 @@
+@import "../UI/header.scss";
+
+.header {
+  padding: 30px 30px 80px 30px;
+
+  &_burgerMenuItem {
+    background-color: $darkBlue;
+  }
+
+  &.open {
+    & .header_burgerMenuItem {
+      background-color: $offWhite;
+    }
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .header {
+    padding-bottom: 96px;
+    &_menuListItem {
+      color: $darkBlue;
+
+      &Link {
+        color: $darkBlue;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 40px 140px 140px;
+
+    &_menuListItem {
+      margin-right: 56px;
+    }
+  }
+}

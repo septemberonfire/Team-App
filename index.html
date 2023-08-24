@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/scss/style.scss" />
+    <link rel="stylesheet" href="./src/scss/mainPage/index.scss"/>
     <title>Team App</title>
   </head>
   <body>
@@ -15,7 +15,7 @@
           <div class="header_menu" id="menu">
             <ul class="header_menuList">
               <li class="header_menuListItem">Product</li>
-              <li class="header_menuListItem">Blog</li>
+              <li class="header_menuListItem"><a href="./blog.html" class="header_menuListItemLink">Blog</a></li>
               <li class="header_menuListItem">Support</li>
               <li class="header_menuListItem">Log In</li>
               <li class="header_menuListItem">Get Access</li>
@@ -23,9 +23,9 @@
             <button class="btn btn-blueLight">Get Access</button>
           </div>
           <div class="header_burgerMenu" id="burgerBtn">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="header_burgerMenuItem"></div>
+            <div class="header_burgerMenuItem"></div>
+            <div class="header_burgerMenuItem"></div>
           </div>
           
         </header>
@@ -121,7 +121,7 @@
       <section class="feedback">
         <h1 class="feedback_title">What people say about Team</h1>
 
-        <div class="feedback_cardsWrap" id="cardsWrap">
+        <div class="feedback_cardsWrap" id="cardsWrap" draggable="true">
           <div class="loader">
             <div class="lds-default">
               <div></div>

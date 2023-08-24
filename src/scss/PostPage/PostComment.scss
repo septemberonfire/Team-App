@@ -1,0 +1,41 @@
+.comment {
+  margin: 0 30px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 764px;
+  &_title {
+    font: $p;
+    color: $darkBlue;
+    margin-bottom: 48px;
+  }
+  &_img {
+    margin-right: 16px;
+  }
+  &_wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  &_input {
+    border: 1px solid $desaturatedBlue;
+    border-radius: 2px;
+    width: 100%;
+    height: fit-content;
+    flex-grow: inherit;
+    margin-bottom: 16px;
+    
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .comment {
+    margin: 0 60px 160px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .comment {
+    margin: 0 338px 160px;
+  }
+}
