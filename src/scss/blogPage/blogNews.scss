@@ -2,37 +2,57 @@
   padding: 0 30px 48px;
   display: flex;
   flex-direction: column;
+
   &_card {
     border-radius: 8px;
     box-shadow: 0px 16px 24px 0px rgba(118, 118, 178, 0.24);
     width: 100%;
     margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+
     &Img {
       margin-bottom: 24px;
       width: 100%;
+      height: 220px;
     }
+
     &Content {
       padding: 0 12px 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
+
     &Title {
       font: $heading3;
       color: $softBlue;
       margin-bottom: 16px;
     }
+
     &Caption {
       font: $caption-m;
       color: $darkBlue;
       margin-bottom: 32px;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      max-height: 96px;
     }
+
     &Autor {
       display: flex;
       align-items: center;
     }
+
     &Name {
       font: $caption-m;
       color: $desaturatedBlue;
       margin: 0 8px;
     }
+
     &Date {
       font: $caption-m;
       color: $desaturatedBlue;
@@ -58,13 +78,14 @@
     &_card {
       margin-bottom: 20px;
       margin-right: 20px;
+
       &Title {
         margin-bottom: 24px;
       }
-      &Caption {
-        margin-bottom: 78px;
-      }
 
+      &Caption {
+        margin-bottom: 24px;
+      }
     }
   }
 }

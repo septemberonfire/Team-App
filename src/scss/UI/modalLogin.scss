@@ -1,0 +1,75 @@
+.popup {
+  &_auth {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $offWhite;
+  max-width: 500px;
+  height: 300px;
+  padding: 30px;
+  &Wrap {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .5s visibility .5s;
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+  &_title {
+    font: $heading3;
+    color: $darkBlue;
+    margin-bottom: 24px;
+  }
+  &_login {
+    padding: 0 12px;
+    border: 2px solid $grayishBlue;
+    border-radius: 8px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  &_password {
+    padding: 0 12px;
+    border: 2px solid $grayishBlue;
+    border-radius: 8px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  &_btn {
+    margin-bottom: 16px;
+  }
+  &_closeBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    transition: all .3s;
+    &:hover {
+      scale: 1.2;
+    }
+    &Item {
+      background-color: $darkBlue;
+      width: 16px;
+      height: 2px;
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: translateY(-2px) rotate(-45deg);
+      }
+    }
+  }
+}

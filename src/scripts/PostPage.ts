@@ -1,3 +1,6 @@
 import showBurgerMenu from "./burgerMenu";
+import showPopup from "./modalBoxLogin";
 
-showBurgerMenu()
+showBurgerMenu();
+console.log(window.location.search)
+showPopup();

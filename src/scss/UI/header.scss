@@ -53,6 +53,7 @@
       align-items: flex-end;
       flex-direction: column;
       &Item {
+        cursor: pointer;
         text-decoration: underline;
         font: $p-m;
         color: $offWhite;
@@ -64,6 +65,8 @@
     }
   }
 }
+
+
 
 .btn-blueLight {
   display: none;

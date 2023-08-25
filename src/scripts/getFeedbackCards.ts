@@ -1,7 +1,19 @@
-export default async function getData() {
-  const url = "https://mocki.io/v1/5bae37d6-5a13-47cb-98f9-9b1809a0b109";
+import { ref, get, child, Database } from "firebase/database";
 
-  const response = await fetch(url);
-  const feedbackCardsData = await response.json();
-  return feedbackCardsData;
+export default async function getData(database: Database) {
+  let result;
+
+  const dbRef = ref(database);
+  await get(child(dbRef, `/feedbackCards`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        result = snapshot.val();
+      } else {
+        console.warn("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  return result;
 }

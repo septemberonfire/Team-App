@@ -1,3 +1,4 @@
+import { Database } from "firebase/database";
 import getData from "./getFeedbackCards";
 
 interface FeedbackCard {
@@ -8,11 +9,10 @@ interface FeedbackCard {
   job: string;
 }
 
-export default async function drawCards() {
-  const feedbackCards: FeedbackCard[] = await getData();
-
+export default async function drawCards(database: Database) {
+  
+  const feedbackCards = (await getData(database)) as unknown as FeedbackCard[];
   const cardsWrap = document.getElementById("cardsWrap");
-
   let allCardsString = "";
 
   feedbackCards.forEach((card) => {
