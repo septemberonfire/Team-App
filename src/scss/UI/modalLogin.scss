@@ -5,7 +5,7 @@
   flex-direction: column;
   background-color: $offWhite;
   max-width: 500px;
-  height: 300px;
+  height: 340px;
   padding: 30px;
   &Wrap {
     visibility: hidden;
@@ -31,6 +31,11 @@
     font: $heading3;
     color: $darkBlue;
     margin-bottom: 24px;
+    
+  }
+  &_info {
+    font: $p;
+    margin-bottom: 16px;
   }
   &_login {
     padding: 0 12px;
@@ -48,6 +53,7 @@
   }
   &_btn {
     margin-bottom: 16px;
+    
   }
   &_closeBtn {
     cursor: pointer;
