@@ -1,22 +1,21 @@
-import { database } from "./getFirebaseDB";
-import getPostCards from "./getPostCards";
+import { database } from './getFirebaseDB'
+import getPostCards from './getPostCards'
 
 interface PostCard {
-  image: string;
-  title: string;
-  caption: string;
-  autorImg: string;
-  autorName: string;
-  postDate: string;
+  image: string
+  title: string
+  caption: string
+  autorImg: string
+  autorName: string
+  postDate: string
 }
 
 export default async function drawPosts() {
-  const postCards = await getPostCards(database) as unknown as PostCard[];
-  const posts = document.querySelector(".news") as HTMLElement;
-  let allPostsString = "";
+  const postCards = (await getPostCards(database)) as unknown as PostCard[]
+  const posts = document.querySelector('.news') as HTMLElement
+  let allPostsString = ''
 
   postCards.forEach((element, index) => {
-
     const postHTML = `<div class="news_card">
     <a href="./post.html?${index}"><img src="${element.image}" alt="" class="news_cardImg" /></a>
     <div class="news_cardContent">
@@ -38,8 +37,8 @@ export default async function drawPosts() {
     </div>
   </div>`
 
-  allPostsString = `${allPostsString} ${postHTML}`
-  });
+    allPostsString = `${allPostsString} ${postHTML}`
+  })
 
   if (posts !== null) {
     posts.innerHTML = allPostsString

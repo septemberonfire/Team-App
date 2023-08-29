@@ -1,22 +1,21 @@
-import { Database } from "firebase/database";
-import getData from "./getFeedbackCards";
+import { Database } from 'firebase/database'
+import getData from './getFeedbackCards'
 
 interface FeedbackCard {
-  name: string;
-  text: string;
-  avatar: string;
-  rate: number;
-  job: string;
+  name: string
+  text: string
+  avatar: string
+  rate: number
+  job: string
 }
 
 export default async function drawCards(database: Database) {
-  
-  const feedbackCards = (await getData(database)) as unknown as FeedbackCard[];
-  const cardsWrap = document.getElementById("cardsWrap");
-  let allCardsString = "";
+  const feedbackCards = (await getData(database)) as unknown as FeedbackCard[]
+  const cardsWrap = document.getElementById('cardsWrap')
+  let allCardsString = ''
 
   feedbackCards.forEach((card) => {
-    let rateString = "";
+    let rateString = ''
     for (let i = 0; i < card.rate; i++) {
       rateString =
         rateString +
@@ -24,7 +23,7 @@ export default async function drawCards(database: Database) {
       src="./src/images/Star.png"
       alt="rating"
       class="feedback_cardRate"
-    />`;
+    />`
     }
     const cardHTML = `<div class="feedback_card">
     ${rateString}
@@ -42,12 +41,12 @@ export default async function drawCards(database: Database) {
         <p class="feedback_userJob">${card.job}</p>
       </div>
     </div>
-  </div>`;
+  </div>`
 
-    allCardsString = `${allCardsString} ${cardHTML}`;
-  });
+    allCardsString = `${allCardsString} ${cardHTML}`
+  })
 
   if (cardsWrap !== null) {
-    cardsWrap.innerHTML = allCardsString;
+    cardsWrap.innerHTML = allCardsString
   }
 }

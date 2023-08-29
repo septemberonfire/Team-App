@@ -6,10 +6,10 @@
     display: flex;
     justify-content: center;
     &-small {
-    object-fit: cover;
-    object-position: 100% 30%;
-    min-height: 280px;
-    margin-bottom: 64px;
+      object-fit: cover;
+      object-position: 100% 30%;
+      min-height: 280px;
+      margin-bottom: 64px;
     }
   }
   &_content {
@@ -35,7 +35,6 @@
 
 @media screen and (min-width: 1440px) {
   .article {
-    
     &_content {
       margin: 0 338px 80px;
     }

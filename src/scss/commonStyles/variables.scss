@@ -1,27 +1,45 @@
-// colors 
-$grayishBlue: #D1ECFD;
-$offWhite: #F5F5F5;
-$softBlue: #5468E7;
-$softBlue-light: rgba(84, 104, 231, .5);
-$softViolet: #C897E4;
+// colors
+$grayishBlue: #d1ecfd;
+$offWhite: #f5f5f5;
+$softBlue: #5468e7;
+$softBlue-light: rgba(84, 104, 231, 0.5);
+$softViolet: #c897e4;
 $darkBlue: #232340;
-$desaturatedBlue: #7676B2;
-$lightOrangge: #FFBA79;
+$desaturatedBlue: #7676b2;
+$lightOrangge: #ffba79;
 
 // fonts
-$heading1: 800 50px/64px "Lexend Deca", sans-serif;
-$heading1-m: 800 34px/42px "Lexend Deca", sans-serif;
-$heading2: 400 32px/40px "Lexend Deca", sans-serif;
-$heading3: 400 24px/30px "Lexend Deca", sans-serif;
-$heading4: 800 16px/26px "Lexend Deca", sans-serif;
+$heading1:
+  800 50px/64px 'Lexend Deca',
+  sans-serif;
+$heading1-m:
+  800 34px/42px 'Lexend Deca',
+  sans-serif;
+$heading2:
+  400 32px/40px 'Lexend Deca',
+  sans-serif;
+$heading3:
+  400 24px/30px 'Lexend Deca',
+  sans-serif;
+$heading4:
+  800 16px/26px 'Lexend Deca',
+  sans-serif;
 
-$p: 400 18px/27px "Lexend Deca", sans-serif;
-$p-m: 400 16px/24px "Lexend Deca", sans-serif;
-$caption: 400 14px/23px "Lexend Deca", sans-serif;
-$caption-m: 400 12px/23px "Lexend Deca", sans-serif;
-$link: 400 16px/24px "Lexend Deca", sans-serif;
-$btn: 400 18px/27px "Lexend Deca", sans-serif;
-
-
-
-
+$p:
+  400 18px/27px 'Lexend Deca',
+  sans-serif;
+$p-m:
+  400 16px/24px 'Lexend Deca',
+  sans-serif;
+$caption:
+  400 14px/23px 'Lexend Deca',
+  sans-serif;
+$caption-m:
+  400 12px/23px 'Lexend Deca',
+  sans-serif;
+$link:
+  400 16px/24px 'Lexend Deca',
+  sans-serif;
+$btn:
+  400 18px/27px 'Lexend Deca',
+  sans-serif;
