@@ -1,5 +1,5 @@
 export default function () {
-  let count = { value: 0 }
+  const count = { value: 0 }
   addListenersForMovingFeedback({ isPrevArrow: true, count })
   addListenersForMovingFeedback({ isPrevArrow: false, count })
 }

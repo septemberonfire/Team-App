@@ -1,6 +1,9 @@
+import auth from './auth'
 import showBurgerMenu from './burgerMenu'
+import getPostPage from './getPostPage'
 import showPopup from './modalBoxLogin'
 
 showBurgerMenu()
-console.log(window.location.search)
 showPopup()
+auth()
+getPostPage()

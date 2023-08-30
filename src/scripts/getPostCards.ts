@@ -1,14 +1,13 @@
 import { ref, get, child, Database } from 'firebase/database'
 
-export default async function getPostCards(database: Database) {
+export default async function getPostCards(database: Database, additionalDBParam = '') {
   let result
 
   const dbRef = ref(database)
-  await get(child(dbRef, `/Posts`))
+  await get(child(dbRef, `/Posts${additionalDBParam}`))
     .then((snapshot) => {
       if (snapshot.exists()) {
         result = snapshot.val()
-        console.log(result)
       } else {
         console.warn('No data available')
       }
