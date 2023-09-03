@@ -1,16 +1,36 @@
 import { database } from './getFirebaseDB'
 import getPostCards from './getPostCards'
+import { ref, set, push, getDatabase } from 'firebase/database'
+
+interface PostCard {
+  image: string
+  title: string
+  caption: string
+  autorImg: string
+  autorName: string
+  postDate: string
+  fullImg: string
+  comments: string[]
+}
 
 export default async function getPostPage() {
-const postId = `/${window.location.search.split('?')[1]}`
+  const postId = `/${window.location.search.split('?')[1]}`
 
-const cardData = await getPostCards(database, postId)
-const mainContent = document.querySelector('.mainContent') as HTMLElement
-let postPageHTMLToString = '' as string
+  const cardData = await getPostCards(database, postId) as unknown as PostCard
+  const mainContent = document.querySelector('.mainContent') as HTMLElement
+  let postPageHTMLToString = '' as string
+  const comments = cardData.comments
+  const commentStorage = document.querySelector('.comment_storage') as HTMLElement
+  const currUser = localStorage.getItem('user')
+  const commentInput = document.querySelector('.comment_input') as HTMLInputElement
+  const commentSendBtn = document.getElementById('comment-send') as HTMLElement
+  let commentHTMLToString = ''
 
-console.log(cardData)
+  console.log(comments)
 
-const postPageHTML = `<section class="headline">
+  console.log(cardData)
+
+  const postPageHTML = `<section class="headline">
 <h1 class="headline_title">
   ${cardData.title}
 </h1>
@@ -30,7 +50,7 @@ const postPageHTML = `<section class="headline">
   <source
     type="image/png"
     media="(min-width: 744px)"
-    srcset="/src/images/office.png"
+    srcset="${cardData.fullImg}"
   />
   <img
   src="./src/images/office_small.png"
@@ -82,8 +102,44 @@ const postPageHTML = `<section class="headline">
 </div>
 </section>`
 
-postPageHTMLToString += `${postPageHTML}`
+  postPageHTMLToString += `${postPageHTML}`
 
-mainContent.innerHTML = postPageHTMLToString
+  mainContent.innerHTML = postPageHTMLToString
 
+  commentSendBtn.addEventListener('click', function () {
+    let commentInputText = commentInput.value as string
+    const commentHTML = `<div class="comment_block">
+  <img src="./src/images/robot.jpg" alt="" class="comment_img" />
+  <div class="comment_wrap">
+  <p class="comment_owner">${currUser}</p>
+  <p class="comment_content">${commentInputText}</p>
+  </div>
+  </div>`
+    function sendCommentToDB() {
+      const db = getDatabase()
+      const commentListRef = ref(db, `Posts/${postId}/comments`)
+      const newComment = push(commentListRef)
+      set(newComment, {
+        commentOwner: currUser,
+        commentContent: commentInputText,
+      })
+    }
+    sendCommentToDB()
+    commentHTMLToString = `${commentHTML}`
+    commentStorage.innerHTML += commentHTMLToString
+    commentInput.value = ''
+  })
+
+  const commentValues = Object.values(comments)
+  commentValues.forEach((element) => {
+    const commentHTML = `<div class="comment_block">
+  <img src="./src/images/robot.jpg" alt="" class="comment_img" />
+  <div class="comment_wrap">
+  <p class="comment_owner">${element.commentOwner}</p>
+  <p class="comment_content">${element.commentContent}</p>
+  </div>
+  </div>`
+    commentHTMLToString = `${commentHTML}`
+    commentStorage.innerHTML += commentHTMLToString
+  })
 }

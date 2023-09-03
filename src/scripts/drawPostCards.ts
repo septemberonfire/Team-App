@@ -8,6 +8,8 @@ interface PostCard {
   autorImg: string
   autorName: string
   postDate: string
+  fullImg: string
+  comments: string[]
 }
 
 export default async function drawPosts() {

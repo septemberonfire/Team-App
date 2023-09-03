@@ -11,11 +11,15 @@
   }
   &_img {
     margin-right: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
   }
-  &_wrap {
+  &_block {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-bottom: 24px;
   }
   &_input {
     border: 1px solid $desaturatedBlue;
@@ -24,6 +28,14 @@
     height: fit-content;
     flex-grow: inherit;
     margin-bottom: 16px;
+    padding: 16px 16px;
+  }
+  &_owner {
+    margin-bottom: 12px;
+    color: $softBlue;
+  }
+  ::placeholder {
+    color: $darkBlue;
   }
 }
 

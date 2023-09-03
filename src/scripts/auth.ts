@@ -41,8 +41,7 @@ export default function auth() {
     const emailTxt = inputEmailSignUp.value
     const passTxt = inputPassSignUp.value
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, emailTxt, passTxt)
-      console.log(userCredential.user)
+      await createUserWithEmailAndPassword(auth, emailTxt, passTxt)
       listItemLogin.style.display = 'none'
       listItemLogout.style.display = 'flex'
       noticeText.innerText = 'You registered successfully!'
@@ -63,7 +62,7 @@ export default function auth() {
     const emailTxt = inputEmailLogin.value
     const passTxt = inputPassLogin.value
     try {
-      await signInWithEmailAndPassword(auth, emailTxt, passTxt)
+      const userCredential = await signInWithEmailAndPassword(auth, emailTxt, passTxt)
       listItemLogin.style.display = 'none'
       listItemLogout.style.display = 'flex'
       noticeText.textContent = `Welcome, ${emailTxt}!`
@@ -71,6 +70,7 @@ export default function auth() {
       inputEmailLogin.value = ''
       inputPassLogin.value = ''
       modalWindowLogin.classList.remove('open')
+      console.log(userCredential)
       setTimeout(() => (notice.style.right = '-600px'), 3000)
       localStorage.setItem('user', emailTxt)
     } catch (error) {
