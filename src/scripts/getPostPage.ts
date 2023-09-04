@@ -13,10 +13,15 @@ interface PostCard {
   comments: string[]
 }
 
+interface Comment {
+  commentOwner: string
+  commentContent: string
+}
+
 export default async function getPostPage() {
   const postId = `/${window.location.search.split('?')[1]}`
 
-  const cardData = await getPostCards(database, postId) as unknown as PostCard
+  const cardData = (await getPostCards(database, postId)) as unknown as PostCard
   const mainContent = document.querySelector('.mainContent') as HTMLElement
   let postPageHTMLToString = '' as string
   const comments = cardData.comments
@@ -25,10 +30,6 @@ export default async function getPostPage() {
   const commentInput = document.querySelector('.comment_input') as HTMLInputElement
   const commentSendBtn = document.getElementById('comment-send') as HTMLElement
   let commentHTMLToString = ''
-
-  console.log(comments)
-
-  console.log(cardData)
 
   const postPageHTML = `<section class="headline">
 <h1 class="headline_title">
@@ -130,7 +131,7 @@ export default async function getPostPage() {
     commentInput.value = ''
   })
 
-  const commentValues = Object.values(comments)
+  const commentValues = Object.values(comments) as unknown as Comment[]
   commentValues.forEach((element) => {
     const commentHTML = `<div class="comment_block">
   <img src="./src/images/robot.jpg" alt="" class="comment_img" />

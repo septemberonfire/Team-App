@@ -26,7 +26,7 @@ function addListenersForMovingFeedback({
   const currentElem = isPrevArrow ? prevArrow : nextArrow
 
   function cardMover() {
-    changePos = setInterval(() => {
+    changePos = window.setInterval(() => {
       if (cardWrap) {
         if (count.value === 0 && isPrevArrow) {
           cardWrap.style.transform = `translateX(${count.value}px)`

@@ -7,4 +7,3 @@ showBurgerMenu()
 showPopup()
 auth()
 getPostPage()
-
