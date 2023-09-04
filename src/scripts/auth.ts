@@ -5,6 +5,7 @@ import {
   signOut,
   browserLocalPersistence,
   setPersistence,
+  AuthErrorCodes,
 } from 'firebase/auth'
 import { app } from './getFirebaseDB'
 
@@ -26,7 +27,9 @@ export default function auth() {
   const modalWindowSignup = document.getElementById('signup-window') as HTMLElement
   const logOutBtn = document.getElementById('approveLogoutBtn') as HTMLElement
   const modalWindowLogout = document.getElementById('logout-window') as HTMLElement
-
+  const infoBlockLogin = document.getElementById('login-info') as HTMLElement
+  const infoBlockSignUp = document.getElementById('signup-info') as HTMLElement
+  
   const setPersLocal = async () => {
     try {
       await setPersistence(auth, browserLocalPersistence)
@@ -53,6 +56,12 @@ export default function auth() {
       localStorage.setItem('user', emailTxt)
     } catch (error) {
       console.error(error)
+      if (error.code == 'auth/email-already-in-use') {
+        infoBlockSignUp.innerText = 'This email is already taken'
+      }
+      if (error.code == AuthErrorCodes.INVALID_EMAIL) {
+        infoBlockSignUp.innerText = 'Wrong email. Try again'
+      }
     }
   }
 
@@ -75,6 +84,15 @@ export default function auth() {
       localStorage.setItem('user', emailTxt)
     } catch (error) {
       console.error(error)
+      if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
+        infoBlockLogin.innerText = 'Wrong password. Try again'
+      }
+      else if (error.code == AuthErrorCodes.INVALID_EMAIL) {
+        infoBlockLogin.innerText = 'Wrong email. Try again'
+      }
+      else if (error.code == 'auth/user-not-found') {
+        infoBlockLogin.innerText = 'User not found'
+      }
     }
   }
 
