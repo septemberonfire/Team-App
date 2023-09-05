@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Lexend+Deca:wght@400;700&display=swap');
-@import '../commonStyles/normalize.scss';
-@import '../commonStyles/variables.scss';
+@import '../../../src/scss/commonStyles/normalize.scss';
+@import '../../../src/scss/commonStyles/variables.scss';
 @import './blogHeader.scss';
 @import './blogHeadline.scss';
 @import './blogNews.scss';
-@import '../UI/footerSection.scss';
-@import '../UI/btn.scss';
-@import '../UI/loader.scss';
-@import '../UI/modalLogin.scss';
-@import '../UI/notice.scss';
+@import '../../../src/scss/UI/footerSection.scss';
+@import '../../../src/scss/UI/btn.scss';
+@import '../../../src/scss/UI/loader.scss';
+@import '../../../src/scss/UI/modalLogin.scss';
+@import '../../../src/scss/UI/notice.scss';
 
 body {
   font-family: 'Lexend Deca', sans-serif;
