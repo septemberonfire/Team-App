@@ -3,11 +3,12 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    target: 'esnext',
+    target: 'es2022',
   },
   esbuild: {
     supported: {
       'top-level-await': true,
     },
   },
+  base: "/team-app/"
 })
