@@ -18,7 +18,7 @@
     </div>
 
     <header class="header">
-      <a href="index.html"><img src="./src/images/Logo_dark.png" alt="logo" /></a>
+      <a href="./index.html"><img src="./src/images/Logo_dark.png" alt="logo" /></a>
 
       <div class="header_menu" id="menu">
         <ul class="header_menuList">
@@ -28,7 +28,9 @@
           <li class="header_menuListItem">
             <a href="./blogPage.html" class="header_menuListItemLink">Blog</a>
           </li>
-          <li class="header_menuListItem">Support</li>
+          <li class="header_menuListItem">
+            <a href="./support.html" class="header_menuListItemLink">Support</a>
+          </li>
           <li class="header_menuListItem login">Log In</li>
           <li class="header_menuListItem logout">Log Out</li>
           <li class="header_menuListItem">Get Access</li>
@@ -111,6 +113,18 @@
     </section>
 
     <footer class="footer">
+      <div class="footer_popupWrap" id="newseller-wrap">
+        <section class="footer_popup">
+          <button class="popup_closeBtn" id="close-newseller-window">
+            <div class="popup_closeBtnItem"></div>
+            <div class="popup_closeBtnItem"></div>
+          </button>
+          <h3 class="popup_title">Done!</h3>
+          <p class="popup_info popup_email"></p>
+          <button class="btn popup_btn" id="approve-btn">Ok</button>
+          
+        </section>
+      </div>
       <div class="footer_wrapper">
         <div class="footer_logoWrap">
           <img src="./src/images/Logo.png" alt="logo" class="footer_logo" />
@@ -126,6 +140,7 @@
               src="./src/images/footer_arrow_forward_24px.png"
               alt="arrow_button"
               class="footer_arrow"
+              id="footer-send-btn"
             />
           </div>
         </div>

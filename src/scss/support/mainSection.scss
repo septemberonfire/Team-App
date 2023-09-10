@@ -1,0 +1,27 @@
+.mainSection {
+  margin: 0 30px 56px;
+  &_headline {
+    font: $heading1;
+    color: $darkBlue;
+    margin-bottom: 24px;
+  }
+  &_caption {
+    font: $p;
+    color: $darkBlue;
+    margin-bottom: 24px;
+  }
+  &_contact {
+    font: $p;
+    color: $darkBlue;
+    margin-bottom: 12px;
+  }
+  &_link {
+    color: $desaturatedBlue;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .mainSection {
+    margin: 0 140px 80px;
+  }
+}

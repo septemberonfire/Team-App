@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/scss/support/index.scss">
+  <title>Support</title>
+</head>
+<body>
+  <header class="header">
+    <a href="./index.html"><img src="./src/images/Logo_dark.png" alt="logo" /></a>
+
+    <div class="header_menu" id="menu">
+      <ul class="header_menuList">
+        <li class="header_menuListItem">
+          <a href="./index.html" class="header_menuListItemLink">Product</a>
+        </li>
+        <li class="header_menuListItem">
+          <a href="./blogPage.html" class="header_menuListItemLink">Blog</a>
+        </li>
+        <li class="header_menuListItem">
+          <a href="./support.html" class="header_menuListItemLink">Support</a>
+        </li>
+        <li class="header_menuListItem login">Log In</li>
+        <li class="header_menuListItem logout">Log Out</li>
+        <li class="header_menuListItem">Get Access</li>
+      </ul>
+      <button class="btn btn-blueLight">Get Access</button>
+    </div>
+    <div class="header_burgerMenu" id="burgerBtn">
+      <div class="header_burgerMenuItem"></div>
+      <div class="header_burgerMenuItem"></div>
+      <div class="header_burgerMenuItem"></div>
+    </div>
+  </header>
+
+  <div class="popup_authWrap" id="login-window">
+    <section class="popup_auth">
+      <button class="popup_closeBtn">
+        <div class="popup_closeBtnItem"></div>
+        <div class="popup_closeBtnItem"></div>
+      </button>
+      <h3 class="popup_title">Sign In</h3>
+      <div class="popup_info" id="login-info"></div>
+      <input type="email" placeholder="Email" class="popup_login" />
+      <input type="password" placeholder="Password" class="popup_password" />
+      <button class="btn popup_btn" id="logInBtn">Log in</button>
+      <p class="popup_toggle">
+        Don't have an account? <a href="#" class="popup_linkToggleToSignup">Sign up!</a>
+      </p>
+    </section>
+  </div>
+
+  <div class="popup_authWrap popup_authWrapLogout" id="logout-window">
+    <section class="popup_auth logoutWindow">
+      <button class="popup_closeBtn closeLogOutBtn">
+        <div class="popup_closeBtnItem"></div>
+        <div class="popup_closeBtnItem"></div>
+      </button>
+      <h3 class="popup_title">Are you sure?</h3>
+      <button class="btn popup_btn" id="approveLogoutBtn">Yes</button>
+      <button class="btn popup_btn" id="rejectLogoutBtn">No</button>
+    </section>
+  </div>
+
+  <div class="popup_authWrap popup_authWrapSignUp" id="signup-window">
+    <section class="popup_auth">
+      <button class="popup_closeBtn closeSignUpBtn">
+        <div class="popup_closeBtnItem"></div>
+        <div class="popup_closeBtnItem"></div>
+      </button>
+      <h3 class="popup_title">Sign Up</h3>
+      <div class="popup_info" id="signup-info"></div>
+      <input type="email" placeholder="Email" class="popup_login" id="inputEmailSignup" />
+      <input
+        type="password"
+        placeholder="Password"
+        class="popup_password"
+        id="inputPassSignup"
+      />
+      <button class="btn popup_btn" id="signUpBtn">Sign Up</button>
+      <p class="popup_toggle">
+        Already have an account? <a href="#" class="popup_linkToggleToLogin">Sign In!</a>
+      </p>
+    </section>
+  </div>
+
+  <section class="mainSection">
+    <h1 class="mainSection_headline">Support</h1>
+    <p class="mainSection_caption">Hey there! Thank you for visiting this project! If you find any problemes in this app, you can connect with me. I will leave my contacts below.</p>
+    <p class="mainSection_contact">Github - <a href="https://github.com/septemberonfire" class="mainSection_link">septemberonfire.</a></p>
+    <p class="mainSection_contact">Telegram - <a href="https://t.me/septemberonfire" class="mainSection_link">septemberonfire.</a></p>
+    <p class="mainSection_contact">Email - dat.a.a@yandex.ru. </p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer_popupWrap" id="newseller-wrap">
+      <section class="footer_popup">
+        <button class="popup_closeBtn" id="close-newseller-window">
+          <div class="popup_closeBtnItem"></div>
+          <div class="popup_closeBtnItem"></div>
+        </button>
+        <h3 class="popup_title">Done!</h3>
+        <p class="popup_info popup_email"></p>
+        <button class="btn popup_btn" id="approve-btn">Ok</button>
+        
+      </section>
+    </div>
+    <div class="footer_wrapper">
+      <div class="footer_logoWrap">
+        <img src="./src/images/Logo.png" alt="logo" class="footer_logo" />
+        <p class="footer_caption">Collaboration platform for mordern team</p>
+      </div>
+      <div class="footer_subscribeWrap">
+        <h3 class="footer_title">Stay up to date</h3>
+        <p class="footer_caption">Subscribe to our newseller</p>
+        <div class="footer_inputWrap">
+          <input type="text" placeholder="Email" class="footer_input" />
+
+          <img
+            src="./src/images/footer_arrow_forward_24px.png"
+            alt="arrow_button"
+            class="footer_arrow"
+            id="footer-send-btn"
+          />
+        </div>
+      </div>
+      <div class="footer_infoWrap">
+        <div class="footer_infoBlock">
+          <h3 class="footer_title">Company</h3>
+          <ul>
+            <li class="footer_caption">Product</li>
+            <li class="footer_caption">Blog</li>
+            <li class="footer_caption">Support</li>
+          </ul>
+        </div>
+        <div class="footer_infoBlock">
+          <h3 class="footer_title">Features</h3>
+          <ul>
+            <li class="footer_caption">Screen Sharing</li>
+            <li class="footer_caption">iOS & Android Apps</li>
+            <li class="footer_caption">File Sharing</li>
+            <li class="footer_caption">User Managment</li>
+          </ul>
+        </div>
+        <div class="footer_infoBlock">
+          <h3 class="footer_title">Contact Us</h3>
+          <ul>
+            <li class="footer_caption">info@teamapp.com</li>
+            <li class="footer_caption">1-800-200-300</li>
+            <li class="footer_caption">1010 Sunset Blv. Palo Alto, California</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="footer_copyright">© Copyright Team Inc.</p>
+  </footer>
+  <script src="./src/scripts/support.ts" type="module"></script>
+</body>
+</html>

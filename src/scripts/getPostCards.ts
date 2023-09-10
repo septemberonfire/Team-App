@@ -17,7 +17,3 @@ export default async function getPostCards(database: Database, additionalDBParam
     })
   return result
 }
-
-/*
-написать функцию getPost которая на вход будет принимать database и индекс поста ${index}. на основе этого индекса надо получать нужный пост
-*/
