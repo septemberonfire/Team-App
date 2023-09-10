@@ -110,7 +110,7 @@ export default async function getPostPage() {
   commentSendBtn.addEventListener('click', function () {
     let commentInputText = commentInput.value as string
     const commentHTML = `<div class="comment_block">
-  <img src="./src/images/robot.jpg" alt="" class="comment_img" />
+  <img src="./robot.jpg" alt="" class="comment_img" />
   <div class="comment_wrap">
   <p class="comment_owner">${currUser}</p>
   <p class="comment_content">${commentInputText}</p>
@@ -134,7 +134,7 @@ export default async function getPostPage() {
   const commentValues = Object.values(comments) as unknown as Comment[]
   commentValues.forEach((element) => {
     const commentHTML = `<div class="comment_block">
-  <img src="./src/images/robot.jpg" alt="" class="comment_img" />
+  <img src="./robot.jpg" alt="" class="comment_img" />
   <div class="comment_wrap">
   <p class="comment_owner">${element.commentOwner}</p>
   <p class="comment_content">${element.commentContent}</p>
