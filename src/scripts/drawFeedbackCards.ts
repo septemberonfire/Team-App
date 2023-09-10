@@ -20,8 +20,8 @@ export default async function drawCards(database: Database) {
       rateString =
         rateString +
         `<img
-      src="./src/images/Star.png"
-      alt="rating"
+      src="./Star.png"
+      alt="star"
       class="feedback_cardRate"
     />`
     }

@@ -18,8 +18,8 @@ export default async function drawPosts() {
   let allPostsString = ''
 
   postCards.forEach((element, index) => {
-    const postHTML = `<div class="news_card">
-    <a href="../post.html?${index}"><img src="${element.image}" alt="" class="news_cardImg" /></a>
+    const postHTML = `<a href="post.html?${index}"><div class="news_card">
+    <img src="${element.image}" alt="" class="news_cardImg" />
     <div class="news_cardContent">
       <h3 class="news_cardTitle">
       ${element.title}
@@ -37,7 +37,7 @@ export default async function drawPosts() {
         <p class="news_cardDate">${element.postDate}</p>
       </div>
     </div>
-  </div>`
+  </div></a>`
 
     allPostsString = `${allPostsString} ${postHTML}`
   })

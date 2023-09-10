@@ -9,7 +9,10 @@
     display: flex;
     align-items: center;
     &Avatar {
-      scale: 0.75;
+      margin-right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
     }
     &Name {
       font: $caption-m;

@@ -5,6 +5,9 @@
   margin: 0 30px 80px;
   &_avatar {
     margin-right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
   }
   &_writtenBy {
     font: $heading4;

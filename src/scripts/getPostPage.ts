@@ -37,7 +37,7 @@ export default async function getPostPage() {
 </h1>
 <div class="headline_autor">
   <img
-    src=".${cardData.autorImg}"
+    src="${cardData.autorImg}"
     alt=""
     class="headline_autorAvatar"
   />
@@ -92,7 +92,7 @@ export default async function getPostPage() {
 </section>
 
 <section class="autor">
-<img src="./blog_page/${cardData.autorImg}" alt="autor" class="autor_avatar" />
+<img src="${cardData.autorImg}" alt="autor" class="autor_avatar" />
 <div class="autor_info">
   <p class="autor_writtenBy">WRITTEN BY</p>
   <p class="autor_name">${cardData.autorName}</p>

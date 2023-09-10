@@ -1,9 +1,17 @@
 import { defineConfig } from 'vite'
-// import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { resolve } from 'path'
+
 
 export default defineConfig({
   build: {
     target: 'es2022',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        nested: resolve(__dirname, 'blogPage.html'),
+        nested2: resolve(__dirname, 'post.html'),
+      },
+    }
   },
   esbuild: {
     supported: {
