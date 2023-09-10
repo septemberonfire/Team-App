@@ -19,7 +19,7 @@ export default async function drawPosts() {
 
   postCards.forEach((element, index) => {
     const postHTML = `<div class="news_card">
-    <a href="./post.html?${index}"><img src="${element.image}" alt="" class="news_cardImg" /></a>
+    <a href="../post.html?${index}"><img src="${element.image}" alt="" class="news_cardImg" /></a>
     <div class="news_cardContent">
       <h3 class="news_cardTitle">
       ${element.title}

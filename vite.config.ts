@@ -10,5 +10,5 @@ export default defineConfig({
       'top-level-await': true,
     },
   },
-  base: "/team-app/"
+  base: '',
 })
