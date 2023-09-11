@@ -7,4 +7,4 @@ Hi! Here's Multipage Application. I made this project using:
 - SASS/SCSS;
 - Firebase.
 
-You can sign up and leave your comments below the articles.
+Also you can sign up and leave your comments below the articles. [Click here](https://septemberonfire.github.io/team-app/) to check it out.
