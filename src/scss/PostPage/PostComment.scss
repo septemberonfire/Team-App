@@ -10,7 +10,7 @@
     margin-bottom: 48px;
   }
   &_img {
-    margin-right: 16px;
+    margin-right: 8px;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -20,6 +20,7 @@
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: 24px;
+    min-width: 250px;
   }
   &_input {
     border: 1px solid $desaturatedBlue;

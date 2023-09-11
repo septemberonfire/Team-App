@@ -47,18 +47,12 @@ export default async function getPostPage() {
 </section>
 
 <section class="article">
-<picture class="article_img">
-  <source
-    type="image/png"
-    media="(min-width: 744px)"
-    srcset="${cardData.fullImg}"
-  />
   <img
-  src="./src/images/office_small.png"
-  alt="office"
-    class="article_img-small"
+  src="${cardData.fullImg}"
+  alt="article-img"
+  class="article_img"
   />
-</picture>
+
 
 <span class="article_content">
   ${cardData.caption} Administrators of Team Cloud organizations can export public data from

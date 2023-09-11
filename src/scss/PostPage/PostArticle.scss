@@ -5,27 +5,22 @@
   &_img {
     display: flex;
     justify-content: center;
-    &-small {
-      object-fit: cover;
-      object-position: 100% 30%;
-      min-height: 280px;
-      margin-bottom: 64px;
-      max-width: 1200px;
-    }
+    object-fit: cover;
+    object-position: 100% 30%;
+    min-height: 280px;
+    margin-bottom: 64px;
   }
   &_content {
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     font: $p;
     margin: 0 30px 64px;
-    // max-width: 764px;
   }
 }
 
 @media screen and (min-width: 744px) {
   .article {
-    &_img-small {
+    &_img {
       margin-bottom: 80px;
     }
     &_content {
@@ -38,6 +33,9 @@
   .article {
     &_content {
       margin: 0 338px 80px;
+    }
+    &_img {
+      margin: 0 160px 80px;
     }
   }
 }
