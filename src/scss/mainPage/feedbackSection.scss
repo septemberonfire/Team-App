@@ -49,6 +49,7 @@
     flex-wrap: nowrap;
     transform: translateX(0px);
     margin-bottom: 48px;
+    transition: all 0.5s ease-in-out;
   }
 
   &_user {

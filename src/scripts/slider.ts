@@ -14,8 +14,6 @@ function addListenersForMovingFeedback({
   const prevArrow = document.querySelector('#prev-arrow')
   const nextArrow = document.querySelector('#next-arrow')
   const cardWrap = document.querySelector('#cardsWrap') as HTMLElement
-
-  let changePos: number
   const wrapperCardsWidth = cardWrap.offsetWidth
   const countElemenets = cardWrap.childElementCount
   const paddingRight = 40
@@ -26,27 +24,31 @@ function addListenersForMovingFeedback({
   const currentElem = isPrevArrow ? prevArrow : nextArrow
 
   function cardMover() {
-    changePos = window.setInterval(() => {
-      if (cardWrap) {
-        if (count.value === 0 && isPrevArrow) {
-          cardWrap.style.transform = `translateX(${count.value}px)`
-          return
-        }
-        if (Math.abs(count.value) > maxWidth && !isPrevArrow) {
-          cardWrap.style.transform = `translateX(${count.value}px)`
-          return
-        }
-        count.value = isPrevArrow ? count.value + 2 : count.value - 2
+    if (cardWrap) {
+      if (count.value === 0 && isPrevArrow) {
+        cardWrap.style.transform = `translateX(${count.value}px)`
+        return
+      }
+      if (Math.abs(count.value) >= maxWidth && !isPrevArrow) {
+        cardWrap.style.transform = `translateX(${count.value}px)`
+        return
+      }
+      if (maxWidth - Math.abs(count.value) < cardWidth && !isPrevArrow) {
+        const carouselRestToEnd = maxWidth - Math.abs(count.value)
+        count.value = count.value + cardWidth - carouselRestToEnd
         cardWrap.style.transform = `translateX(${count.value}px)`
       }
-    }, 1)
+      if (Math.abs(count.value) < cardWidth && isPrevArrow) {
+        const carouselRestToBeginning = Math.abs(count.value)
+        count.value = count.value + carouselRestToBeginning - cardWidth - gap
+        cardWrap.style.transform = `translateX(${count.value}px)`
+      }
+      count.value = isPrevArrow ? count.value + cardWidth + gap : count.value - cardWidth - gap
+      cardWrap.style.transform = `translateX(${count.value}px)`
+    }
   }
 
   if (currentElem) {
-    currentElem.addEventListener('mousedown', cardMover)
-    currentElem.addEventListener('touchstart', cardMover)
-    currentElem.addEventListener('mouseup', () => clearInterval(changePos))
-    currentElem.addEventListener('touchend', () => clearInterval(changePos))
-    currentElem.addEventListener('mouseleave', () => clearInterval(changePos))
+    currentElem.addEventListener('click', cardMover)
   }
 }
