@@ -43,7 +43,6 @@ jobs:
         env:
           VITE_API_KEY: ${{ vars.VITE_API_KEY }}
           VITE_APP_ID: ${{ vars.VITE_APP_ID }}
-          VITE_PRIVATE_KEY: ${{ vars.VITE_PRIVATE_KEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
