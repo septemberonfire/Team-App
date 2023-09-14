@@ -2,36 +2,6 @@ export default function () {
   const count = { value: 0 }
   addListenersForMovingFeedback({ isPrevArrow: true, count })
   addListenersForMovingFeedback({ isPrevArrow: false, count })
-  dnd()
-}
-function dnd() {
-  const cardWrap = document.querySelector('#cardsWrap') as HTMLElement
-  let isPressed = false
-  let transX = 0
-
-  cardWrap.addEventListener("mouseup", () => {
-    isPressed = false
-    cardWrap.style.cursor = "grab";
-  });
-
-  cardWrap.addEventListener('mousedown', (e) => {
-    cardWrap.style.cursor = 'grabbing'
-    isPressed = true
-    let movement = window.getComputedStyle(cardWrap).transform.split(',')
-    transX = +movement.splice(-2, 1)
-  })
-
-  cardWrap.addEventListener('mouseenter', () => {
-    cardWrap.style.cursor = 'grab'
-  })
-
-  cardWrap.addEventListener('mousemove', (e) => {
-    if (!isPressed) return
-    let x = e.offsetX
-    e.preventDefault()
-    cardWrap.style.transform = `translateX(${x - transX}px)`
-    console.log({ offsetX: x, transX })
-  })
 }
 
 function addListenersForMovingFeedback({
